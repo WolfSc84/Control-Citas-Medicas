@@ -1,3 +1,7 @@
+/**
+ * Clase para manejar el objeto doctor.
+ * Permite registrar los doctores que se añaden al sistema, registrar y manejar su informacion.
+ */
 public class Doctor{
     //Propiedades
     static int id = 0; //Autoincrement
@@ -5,9 +9,10 @@ public class Doctor{
     String speciality;
 
     //Constructor
-    Doctor(String name){
+    Doctor(String name, String speciality){
         System.out.println("Construyendo el objeto Doctor.");
         this.name = name;
+        this.speciality = speciality;
         id++; 
     }
 

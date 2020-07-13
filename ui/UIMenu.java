@@ -2,9 +2,21 @@ package ui;
 
 import java.util.Scanner;
 
+/**
+ * Clase con metodos y argumentos estaticos, como tambien constantes.
+ * Cuenta con las funciones para mostrar el menu en pantalla y permite seleccionar las opciones para ingresar a cada una de las funciones del menu.
+ */
 public class UIMenu {
 
+    //Constante MONTHS
     public static final String[] MONTHS = {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"};
+    
+    /**
+     * Metodo para mostrar menu en consola con opciones a elegir entre:
+     * Doctor, Paciente o Salir de la aplicacion. 
+     * @param response Captura el valor seleccionado por el usuario escrito en el teclado.
+     * Dicho valor debe ser numerico entre 0-2, sino arrojara error pidiendo seleccionar un valor correcto.
+     */
     public static void showMenu(){
         System.out.println("Welcome to My Appointments");
         System.out.println("Selecciona la opción deseada");
@@ -36,9 +48,14 @@ public class UIMenu {
         }while (response != 0);
     }
 
+    /**
+     * Metodo para mostrar el menu cuando se selecciona la opcion paciente.
+     @param response Captura el valor seleccionado por el usuario escrito en el teclado.
+     * Dicho valor debe ser numerico entre 0-2, sino arrojara error pidiendo seleccionar un valor correcto.
+     */
     static void showPatientMenu(){
         int response = 0;
-        do {1
+        do {
             System.out.println("\n\n");
             System.out.println("Patient");
             System.out.println("1. Book an appointment");
