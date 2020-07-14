@@ -86,7 +86,7 @@ public class Patient {
     }
 
      /**
-     * Metodo para obtener el nombre del paciente.
+     * Metodo para definir el nombre del paciente.
      *  @param name Nombre del paciente.
      */
     public void setName(String name) {
@@ -96,7 +96,7 @@ public class Patient {
     /**
      * Metodo para obtener el email del paciente.
      * @param email Mail del paciente.
-     * @return
+     * @return Retorna el mail del paciente.
      */
     public String getEmail() {
         return email;
@@ -146,7 +146,6 @@ public class Patient {
         }else if(phoneNumber.length() == 8){
             this.phoneNumber = phoneNumber;
         }
-
     }
 
     /**
