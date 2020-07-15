@@ -5,37 +5,18 @@ import java.util.Date;
  * Clase para manejar el objeto doctor.
  * Permite registrar los doctores que se añaden al sistema, registrar y manejar su informacion.
  */
-public class Doctor{
+public class Doctor extends User{
     //Propiedades
-    static int id = 0; //Autoincrement
-    private String name;
+
     private String speciality;
-    private String email;
 
     //Constructor
-    Doctor(){
+    Doctor(String name, String email){
+        super(name, email);
         System.out.println("Construyendo el objeto Doctor.");
-        id++; 
     }
 
     //Comportamientos
-
-    /**
-    * Metodo para obtener el nombre del doctor.
-    *  @param name Nombre del doctor.
-    * @return Retorna el nombre del doctor.
-    */
-    public String getName() {
-        return this.name;
-    }
-
-    /**
-    * Metodo para definir el nombre del doctor.
-    *  @param name Nombre del doctor.
-    */
-    public void setName(String name) {
-        this.name = name;
-    }
 
     /**
      * Metodo para obtener la especialidad del doctor.
@@ -46,46 +27,12 @@ public class Doctor{
         return this.speciality;
     }
 
-
     /**
      * Metodo para definir la especialidad del doctor.
      *  @param speciality Nombre del doctor.
      */
     public void setSpeciality(String speciality) {
         this.speciality = speciality;
-    }
-
-     /**
-     * Metodo para obtener el email del doctor.
-     * @param email Mail del doctor.
-     * @return Retorna el mail del doctor.
-     */
-    public String getEmail() {
-        return this.email;
-    }
-
-    /**
-     * Metodo para definir el email del doctor.
-     * @param email Mail del doctor.
-     */
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    /**
-     * Metodo para imprimir el nombre del doctor.
-     * @param name Variable que almacena el nombre de la variable.
-     */
-    public void showName(){
-        System.out.println(name);
-    }
-
-    /**
-     * Metodo para imprimir el id actual del objeto creado.
-     * @param id Es d epor si un contador de objetos creados.
-     */
-    public void showId(){
-        System.out.println("ID Doctor: "+id);
     }
 
     /**

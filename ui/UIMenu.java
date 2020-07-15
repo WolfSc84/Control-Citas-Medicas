@@ -7,7 +7,7 @@ import java.util.Scanner;
  * Cuenta con las funciones para mostrar el menu en pantalla y permite seleccionar las opciones para ingresar a cada una de las funciones del menu.
  */
 public class UIMenu {
-
+    //Atributos
     //Constante MONTHS
     public static final String[] MONTHS = {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"};
     

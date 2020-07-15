@@ -2,13 +2,8 @@
  * Clase para manejar el objeto paciente.
  * Permite registrar los pacientes que se añaden al sistema, registrar y manejar su informacion.
  */
-public class Patient {
-    //Propiedades
-    int id;
-    private String name;
-    private String email;
-    private String address;
-    private String phoneNumber;
+public class Patient extends User{
+    //Atributos
     private String birthday;
     private double weight;
     private double height;
@@ -16,8 +11,8 @@ public class Patient {
 
     //Constructor
     Patient(String name, String email){
-        this.name = name;
-        this.email = email;
+        super(name, email);
+        System.out.println("Construyendo el objeto Paciente.");
     }
 
     //Comportamientos
@@ -57,95 +52,6 @@ public class Patient {
      */
     public void setHeight(double height) {
         this.height = height;
-    }
-
-    /**
-     * Metodo para obtener el id del paciente.
-     * @param id Valor del id del paciente.
-     * @return Retorna el id del paciente.
-     */
-    public int getId() {
-        return id;
-    }
-
-    /**
-     * Metodo para definir el id del paciente.
-     * @param id Valor del id del paciente.
-     */
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    /**
-     * Metodo para obtener el nombre del paciente.
-     *  @param name Nombre del paciente.
-     * @return Retorna el nombre del paciente.
-     */
-    public String getName() {
-        return name;
-    }
-
-     /**
-     * Metodo para definir el nombre del paciente.
-     *  @param name Nombre del paciente.
-     */
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    /**
-     * Metodo para obtener el email del paciente.
-     * @param email Mail del paciente.
-     * @return Retorna el mail del paciente.
-     */
-    public String getEmail() {
-        return email;
-    }
-
-    /**
-     * Metodo para definir el mail del paciente.
-     * @param email Mail del paciente.
-     */
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    /**
-     * Metodo para obtener la direccion del paciente.
-     * @param address Direccion del paciente.
-     * @return Retorna la direccion del paciente.
-     */
-    public String getAddress() {
-        return address;
-    }
-
-    /**
-     * Meotod para definir la direccion del paciente.
-     * @param address Direccion del paciente.
-     */
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    /**
-     * Metodo para de obtener el telefono del paciente.
-     * @param phoneNumber Numero de telefono del paciente.
-     * @return Retorna el telefono del paciente.
-     */
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-       /**
-     * Metodo para de definir el telefono del paciente.
-     * @param phoneNumber Numero de telefono del paciente.
-     */
-    public void setPhoneNumber(String phoneNumber) {
-        if (phoneNumber.length() > 8){
-            System.out.println("El número telefónico debe ser de 8 dígitos máximo");
-        }else if(phoneNumber.length() == 8){
-            this.phoneNumber = phoneNumber;
-        }
     }
 
     /**

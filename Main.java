@@ -8,11 +8,8 @@ public class Main {
      */
     public static void main(String[] args) {
         
-        Doctor myDoctor = new Doctor();
-        myDoctor.setName("Alejandro Pelamelo");
+        Doctor myDoctor = new Doctor("Alejandro Pelamelo","pelamelotodo@gmail.com");
         myDoctor.setSpeciality("Pelamelonista");
-        myDoctor.showId();
-        System.out.println(Doctor.id);
         myDoctor.showName();
         
         myDoctor.addAvailableAppointment(new Date(), "16:00 horas");
@@ -29,19 +26,14 @@ public class Main {
         }
         System.out.println(myDoctor.getAvailableAppointments());
         
-        Doctor myDoctorAnn = new Doctor( );
-        myDoctorAnn.setName("Maria Loraja");
+        Doctor myDoctorAnn = new Doctor("Maria Loraja", "calientita4@gmail.com");
         myDoctorAnn.setSpeciality("Pollanutista");
-        System.out.println(Doctor.id);
         myDoctorAnn.showName();
 
         Patient patient = new Patient("Alejandra Chupapolla", "alejandrita@gmail.com");
         System.out.println("Paciente: " + patient.getName());
         System.out.println("Correo electrónico: " + patient.getEmail());
 
-        Doctor.id++;
         showMenu();
-
-
     }    
 }
