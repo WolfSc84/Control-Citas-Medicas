@@ -1,5 +1,8 @@
+package src.model;
+
 import java.util.ArrayList;
 import java.util.Date;
+
 
 /**
  * Clase para manejar el objeto doctor.
@@ -11,7 +14,7 @@ public class Doctor extends User{
     private String speciality;
 
     //Constructor
-    Doctor(String name, String email){
+    public Doctor(String name, String email){
         super(name, email);
         System.out.println("Construyendo el objeto Doctor.");
     }
@@ -58,11 +61,25 @@ public class Doctor extends User{
         return availableAppointments;
     }
 
+    /**
+     * Metodo para sobreescribir el metodo toString el cual es llamado automaticamente cuando se imprime en consola el objeto en general.
+     * @return Retornara el metodo toString de la clase Padre, añadiendo mas comportamiento para el caso doctor.
+     */
+    @Override
+    public String toString(){
+        return super.toString() + "\nSpeciallity: " + speciality + "\nAvailable: " + availableAppointments;
+    }
+
+    /**
+     * Clase estatica para manejar la citas de cada usuario.
+     * Esta clase no necesariamente requiere ser instanciada.
+     */
     public static class AvailableAppointment{
         private int id;
         private Date date;
         private String time;
 
+        //Constructor
         public AvailableAppointment(Date date, String time){
             this.date = date;
             this.time = time;
@@ -116,8 +133,13 @@ public class Doctor extends User{
             return this.id;
         }
 
-
+        /**
+        * Metodo para sobreescribir el metodo toString, solo que este corresponde al comportamiento que tendria el metodo dentro de la clase interna.
+        * @return Retornara el metodo toString de la clase externa añadiendo mas comportamientos.
+        */
+        @Override
+        public String toString(){
+            return "Available Appointments \nDate: " + date + "\nTime" + time;
+        }
     }
-
-
 }

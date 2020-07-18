@@ -1,3 +1,5 @@
+package src.model;
+
 /**
  * Clase para manejar el objeto paciente.
  * Permite registrar los pacientes que se añaden al sistema, registrar y manejar su informacion.
@@ -10,7 +12,7 @@ public class Patient extends User{
     private String blood;
 
     //Constructor
-    Patient(String name, String email){
+    public Patient(String name, String email){
         super(name, email);
         System.out.println("Construyendo el objeto Paciente.");
     }
@@ -86,5 +88,14 @@ public class Patient extends User{
      */
     public void setBlood(String blood) {
         this.blood = blood;
+    }
+
+    /**
+    * Metodo para sobreescribir el metodo toString el cual es llamado automaticamente cuando se imprime en consola el objeto en general.
+    * @return Retornara el metodo toString de la clase Padre, añadiendo mas comportamiento para el caso paciente.
+    */
+    @Override
+    public String toString(){
+        return super.toString() + " Objeto tipo paciente";
     }
 }

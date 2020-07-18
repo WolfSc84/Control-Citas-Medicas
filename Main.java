@@ -1,31 +1,37 @@
 import java.util.Date;
-import static ui.UIMenu.*;
+import static src.ui.UIMenu.*;
+import src.model.*;
 
 public class Main {
     /**
-     * Metodo main principal del programa.
-     * Accede desde aqui a las demas clases para crear los objetos necesarios y poder ejecutar las funciones requeridas.
+     * Metodo main principal del programa. Accede desde aqui a las demas clases para
+     * crear los objetos necesarios y poder ejecutar las funciones requeridas.
      */
     public static void main(String[] args) {
-        
-        Doctor myDoctor = new Doctor("Alejandro Pelamelo","pelamelotodo@gmail.com");
+
+        Doctor myDoctor = new Doctor("Alejandro Pelamelo", "pelamelotodo@gmail.com");
         myDoctor.setSpeciality("Pelamelonista");
         myDoctor.showName();
-        
+        System.out.println(myDoctor);
+
         myDoctor.addAvailableAppointment(new Date(), "16:00 horas");
         myDoctor.addAvailableAppointment(new Date(), "13:00 horas");
         myDoctor.addAvailableAppointment(new Date(), "10:00 horas");
-        
+
         /**
-         * Ciclo foreach para recorrer la coleccion de objetos que contiene las fechas y horas.
-         * Se crea un elemento con el mismo tipo de dato de los objetos de la coleccion y se extrae la informacion de la coleccion con el metodo get que se definio en la clase externa.
-         * @param aA Clase sin instanciar por ser estatica que almacenara la informacion temporalmente mientras se ejecuta el foreach.
+         * Ciclo foreach para recorrer la coleccion de objetos que contiene las fechas y
+         * horas. Se crea un elemento con el mismo tipo de dato de los objetos de la
+         * coleccion y se extrae la informacion de la coleccion con el metodo get que se
+         * definio en la clase externa.
+         * 
+         * @param aA Clase sin instanciar por ser estatica que almacenara la informacion
+         *           temporalmente mientras se ejecuta el foreach.
          */
-        for (Doctor.AvailableAppointment aA: myDoctor.getAvailableAppointments()) {
+        for (Doctor.AvailableAppointment aA : myDoctor.getAvailableAppointments()) {
             System.out.println(aA.getDate() + " " + aA.getTime());
         }
         System.out.println(myDoctor.getAvailableAppointments());
-        
+
         Doctor myDoctorAnn = new Doctor("Maria Loraja", "calientita4@gmail.com");
         myDoctorAnn.setSpeciality("Pollanutista");
         myDoctorAnn.showName();
@@ -33,7 +39,8 @@ public class Main {
         Patient patient = new Patient("Alejandra Chupapolla", "alejandrita@gmail.com");
         System.out.println("Paciente: " + patient.getName());
         System.out.println("Correo electrónico: " + patient.getEmail());
+        System.out.println(patient);
 
         showMenu();
-    }    
+    }
 }
