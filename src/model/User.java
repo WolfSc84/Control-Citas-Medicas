@@ -8,7 +8,12 @@ public abstract class User {
     private String address;
     private String phoneNumber;
 
-    // Constructor
+    /**
+     * Metodo constructor del usuario
+     * 
+     * @param name  Nombre del usuario
+     * @param email Email del usuario
+     */
     public User(String name, String email) {
         this.name = name;
         this.email = email;
@@ -16,6 +21,13 @@ public abstract class User {
     }
 
     // Comportamientos
+
+    /**
+     * Metodo abstracto, de obligatoria implementacion por ser de una clase
+     * abstracta. Este metodo muestra los datos de los usuarios. Muestra toda la
+     * informacion pertinente del usuario.
+     */
+    public abstract void showDataUser();
 
     /**
      * Metodo para obtener el id del usuario.
