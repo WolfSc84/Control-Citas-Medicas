@@ -1,7 +1,8 @@
-import java.util.Date;
+
+//import java.util.Date;
 import static src.ui.UIMenu.*;
-import src.model.*;
-import java.text.SimpleDateFormat;
+//import src.model.*;
+//import java.text.SimpleDateFormat;
 
 public class Main {
     /**
@@ -10,21 +11,29 @@ public class Main {
      */
     public static void main(String[] args) {
 
-        Doctor myDoctor = new Doctor("Alejandro Pelamelo", "pelamelotodo@gmail.com");
-        myDoctor.setSpeciality("Pelamelonista");
-        myDoctor.showName();
-        System.out.println(myDoctor);
-        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+        showMenu();
 
-        myDoctor.addAvailableAppointment(format.format(new Date()), "16:00 horas");
-        myDoctor.addAvailableAppointment(format.format(new Date()), "13:00 horas");
-        myDoctor.addAvailableAppointment(format.format(new Date()), "10:00 horas");
+        /*
+         * Doctor myDoctor = new Doctor("Alejandro Pelamelo", "pelamelotodo@gmail.com");
+         * myDoctor.setSpeciality("Pelamelonista"); myDoctor.showName();
+         * System.out.println(myDoctor); SimpleDateFormat format = new
+         * SimpleDateFormat("dd/MM/yyyy");
+         * 
+         * myDoctor.addAvailableAppointment(format.format(new Date()), "16:00 horas");
+         * myDoctor.addAvailableAppointment(format.format(new Date()), "13:00 horas");
+         * myDoctor.addAvailableAppointment(format.format(new Date()), "10:00 horas");
+         */
 
-        // Tipo de polimorfismo que adquiere la forma del objeto final que lo instancia
-        // que para este caso es doctor.
-        // Se crea con el objeto user pero se termina de instanciar con el doctor.
-        User user = new Doctor("Miguelangel Landa", "culitoafloreado@hotmail.com");
-        user.showDataUser();
+        /**
+         * Tipo de polimorfismo que adquiere la forma del objeto final que lo instancia
+         * que para este caso es doctor. Se crea con el objeto user pero se termina de
+         * instanciar con el doctor.
+         */
+        /*
+         * User user = new Doctor("Miguelangel Landa", "culitoafloreado@hotmail.com");
+         * user.showDataUser();
+         */
+
         /**
          * Ciclo foreach para recorrer la coleccion de objetos que contiene las fechas y
          * horas. Se crea un elemento con el mismo tipo de dato de los objetos de la
@@ -34,19 +43,19 @@ public class Main {
          * @param aA Clase sin instanciar por ser estatica que almacenara la informacion
          *           temporalmente mientras se ejecuta el foreach.
          */
-        for (Doctor.AvailableAppointment aA : myDoctor.getAvailableAppointments()) {
-            System.out.println(aA.getDate() + " " + aA.getTime());
-        }
-        System.out.println(myDoctor.getAvailableAppointments());
-
-        Doctor myDoctorAnn = new Doctor("Maria Loraja", "calientita4@gmail.com");
-        myDoctorAnn.setSpeciality("Pollanutista");
-        myDoctorAnn.showName();
-
-        Patient patient = new Patient("Alejandra Chupapolla", "alejandrita@gmail.com");
-        System.out.println("Paciente: " + patient.getName());
-        System.out.println("Correo electrónico: " + patient.getEmail());
-        System.out.println(patient);
+        /*
+         * for (Doctor.AvailableAppointment aA : myDoctor.getAvailableAppointments()) {
+         * System.out.println(aA.getDate() + " " + aA.getTime()); }
+         * System.out.println(myDoctor.getAvailableAppointments());
+         * 
+         * Doctor myDoctorAnn = new Doctor("Maria Loraja", "calientita4@gmail.com");
+         * myDoctorAnn.setSpeciality("Pollanutista"); myDoctorAnn.showName();
+         * 
+         * Patient patient = new Patient("Alejandra Chupapolla",
+         * "alejandrita@gmail.com"); System.out.println("Paciente: " +
+         * patient.getName()); System.out.println("Correo electrónico: " +
+         * patient.getEmail()); System.out.println(patient);
+         */
 
         /**
          * Estamos implementando una clase como anonima, para este caso es abstracta.
@@ -56,15 +65,14 @@ public class Main {
          * de este objeto del tipo clase anonimo, solo sera vigente durante el lapso de
          * tiempo que se ejecuta el objeto User creado.
          */
-        User user1 = new User("Motombo", "guebote@hotmail.com") {
-            @Override
-            public void showDataUser() {
-                System.out.println("Doctor");
-                System.out.println("Hospital: Matadero");
-                System.out.println("Departamento: Geriatria");
-            }
-        };
-        user1.showDataUser();
+
+        /*
+         * User user1 = new User("Motombo", "guebote@hotmail.com") {
+         * 
+         * @Override public void showDataUser() { System.out.println("Doctor");
+         * System.out.println("Hospital: Matadero");
+         * System.out.println("Departamento: Geriatria"); } }; user1.showDataUser();
+         */
 
         /**
          * Implementacion de un objeto anonimo por medio de una interface. Se implementa
@@ -73,12 +81,14 @@ public class Main {
          * La duracion de este objeto sera vigente el lapso de tiempo que se utilice y
          * ejecute los metodos del objeto creado.
          */
-        UIScheduable uiScheduable = new UIScheduable() {
-            @Override
-            public void schedule(Date date, String time) {
 
-            }
-        };
+        /*
+         * UIScheduable uiScheduable = new UIScheduable() {
+         * 
+         * @Override public void schedule(Date date, String time) {
+         * 
+         * } };
+         */
 
         /**
          * Un ejemplo de polimorfismo, en donde creamos un objeto con el uso de la
@@ -86,10 +96,9 @@ public class Main {
          * utilizar el objeto, llamamos el metodo schedule de la interfaz que se
          * implementa en la clase AppointmentDoctor.
          */
-        UIScheduable uiScheduable2 = new AppointmentDoctor();
-        Date date = new Date();
-        uiScheduable2.schedule(date, "4:00 horas");
-
-        showMenu();
+        /*
+         * UIScheduable uiScheduable2 = new AppointmentDoctor(); Date date = new Date();
+         * uiScheduable2.schedule(date, "4:00 horas");
+         */
     }
 }

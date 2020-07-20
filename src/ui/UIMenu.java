@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import src.model.Doctor;
 import src.model.Patient;
+import src.ui.UIDoctorMenu;
 
 /**
  * Clase con metodos y argumentos estaticos, como tambien constantes. Cuenta con
@@ -13,7 +14,8 @@ import src.model.Patient;
  */
 public class UIMenu {
     // Atributos
-    // Constante MONTHS
+    // Constante MONTHS con los meses del año para manejar las fechas de los
+    // usuarios.
     public static final String[] MONTHS = { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto",
             "Septiembre", "Octubre", "Noviembre", "Diciembre" };
 
@@ -29,6 +31,8 @@ public class UIMenu {
      *                 arrojara error pidiendo seleccionar un valor correcto.
      */
     public static void showMenu() {
+
+        System.out.println("\n\n");
         System.out.println("Welcome to My Appointments");
         System.out.println("Selecciona la opción deseada");
 
@@ -38,9 +42,12 @@ public class UIMenu {
             System.out.println("2. Patient");
             System.out.println("0. Salir");
 
+            // Captura opcion de teclado seleccionada por el usuario.
             Scanner sc = new Scanner(System.in);
             response = Integer.valueOf(sc.nextLine());
 
+            // Compara la opcion seleccionada para llamar la funcion correspondiente al tipo
+            // de usuario seleccionado.
             switch (response) {
                 case 1:
                     System.out.println("Doctor");
@@ -81,6 +88,13 @@ public class UIMenu {
         patients.add(new Patient("Duquesa Santamaria", "duquesashurunga@gmail.com"));
 
         boolean emailCorrect = false;
+        /**
+         * Una vez seleccionado el usuario se procede a verificar que este registrado en
+         * el sistema autenticando el email. Si el usuario esta registrado, se loguea
+         * asignando el objeto a un objeto de mayor Scope en esta clase. Los objetos de
+         * ayuda para manejar el logueo son doctorLogged y patientLogged. Inmediatamente
+         * se llamara la funcion del menu correspondiente al usuario logueado.
+         */
         do {
             System.out.println("Insert your email: [a@a.com]: ");
             Scanner sc = new Scanner(System.in);
@@ -91,7 +105,9 @@ public class UIMenu {
                         emailCorrect = true;
                         // Obtener los datos del usuario logueado.
                         doctorLogged = d;
-                        // showDoctorMenu
+                        // showDoctorMenu de la clase UIDoctorMenu encargada de la interfaz de los
+                        // doctores.
+                        UIDoctorMenu.showDoctorMenu();
                     }
                 }
             } else if (userType == 2) {
@@ -100,7 +116,8 @@ public class UIMenu {
                         emailCorrect = true;
                         // Obtener los datos del usuario logueado.
                         patientLogged = p;
-                        // showPatientMenu
+                        // showPatientMenu de la clase UIPatientMenu encargada de la interfaz de los
+                        // pacientes.
                     }
                 }
             }
@@ -123,6 +140,7 @@ public class UIMenu {
             System.out.println("2. My appointments");
             System.out.println("0. Return");
 
+            // Captura opcion de teclado seleccionada por el usuario.
             Scanner sc = new Scanner(System.in);
             response = Integer.valueOf(sc.nextLine());
 

@@ -15,6 +15,15 @@ public class Doctor extends User {
     private String speciality;
 
     /**
+     * Define una coleccion del tipo List indicandole entre <> que solo puede
+     * recibir objetos del tipo de la clases anidadas definida, que en este caso es
+     * estatica por ello recibira la clase directamente y los datos date y time Se
+     * observa como se define y se instancia tal cual un objeto normal porque este
+     * array de por si es un objeto en si que almacena mas objetos dentro de el.
+     */
+    private ArrayList<AvailableAppointment> availableAppointments = new ArrayList<>();
+
+    /**
      * Metodo constructor del doctor
      * 
      * @param name  Nombre de Doctor
@@ -55,15 +64,6 @@ public class Doctor extends User {
     public void setSpeciality(String speciality) {
         this.speciality = speciality;
     }
-
-    /**
-     * Define una coleccion del tipo List indicandole entre <> que solo puede
-     * recibir objetos del tipo de la clases anidadas definida, que en este caso es
-     * estatica por ello recibira la clase directamente y los datos date y time Se
-     * observa como se define y se instancia tal cual un objeto normal porque este
-     * array de por si es un objeto en si que almacena mas objetos dentro de el.
-     */
-    ArrayList<AvailableAppointment> availableAppointments = new ArrayList<>();
 
     /**
      * Metodo para agregar nuevas citas al array coleccion creado previamente.
@@ -133,7 +133,7 @@ public class Doctor extends User {
          * 
          * @param date Fecha de la cita
          */
-        public Date getDate() {
+        public Date getDate(String DATE) {
             return this.date;
         }
 
@@ -142,7 +142,7 @@ public class Doctor extends User {
          * 
          * @param date Fecha de la cita
          */
-        public String getDate(String DATE) {
+        public String getDate() {
             return format.format(date);
         }
 
