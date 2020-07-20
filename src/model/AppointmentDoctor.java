@@ -10,6 +10,11 @@ public class AppointmentDoctor implements UIScheduable {
     private Date date;
     private String time;
 
+    public AppointmentDoctor(Patient patient, Doctor doctor) {
+        this.patient = patient;
+        this.doctor = doctor;
+    }
+
     public int getId() {
         return this.id;
     }
@@ -43,15 +48,17 @@ public class AppointmentDoctor implements UIScheduable {
     }
 
     public String getTime() {
-        return this.time;
+        return this.time + "hrs.";
     }
 
     public void setTime(String time) {
         this.time = time;
     }
 
+    @Override
     public void schedule(Date date, String time) {
-
+        this.date = date;
+        this.time = time;
     }
 
 }

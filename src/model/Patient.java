@@ -1,5 +1,8 @@
 package src.model;
 
+import java.util.ArrayList;
+import java.util.Date;
+
 /**
  * Clase para manejar el objeto paciente. Permite registrar los pacientes que se
  * añaden al sistema, registrar y manejar su informacion.
@@ -10,6 +13,27 @@ public class Patient extends User {
     private double weight;
     private double height;
     private String blood;
+
+    private ArrayList<AppointmentDoctor> appointmentDoctors = new ArrayList<>();
+    private ArrayList<AppointmentNurse> appointmentNurses = new ArrayList<>();
+
+    public ArrayList<AppointmentDoctor> getAppointmentDoctors() {
+        return this.appointmentDoctors;
+    }
+
+    public void addAppointmentDoctors(Doctor doctor, Date date, String time) {
+        AppointmentDoctor appointmentDoctor = new AppointmentDoctor(this, doctor);
+        appointmentDoctor.schedule(date, time);
+        appointmentDoctors.add(appointmentDoctor);
+    }
+
+    public ArrayList<AppointmentNurse> getAppointmentNurses() {
+        return this.appointmentNurses;
+    }
+
+    public void setAppointmentNurses(ArrayList<AppointmentNurse> appointmentNurses) {
+        this.appointmentNurses = appointmentNurses;
+    }
 
     /**
      * Metodo constructor del paciente

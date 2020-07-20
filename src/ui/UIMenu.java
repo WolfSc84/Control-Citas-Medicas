@@ -118,6 +118,7 @@ public class UIMenu {
                         patientLogged = p;
                         // showPatientMenu de la clase UIPatientMenu encargada de la interfaz de los
                         // pacientes.
+                        UIPatientMenu.showPatientMenu();
                     }
                 }
             }
